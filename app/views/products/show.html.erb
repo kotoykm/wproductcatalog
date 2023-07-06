@@ -1,7 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @product %>
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
 
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @product.size %>
+</p>
+
+<p>Categorias</p>
+  <ul>
+    <%@product.categories.each do |o|%>
+      <li><%= o.name %></li>
+    <%end%>
+  </ul>
 <div>
   <%= link_to "Edit this product", edit_product_path(@product) %> |
   <%= link_to "Back to products", products_path %>

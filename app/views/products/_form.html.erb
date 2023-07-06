@@ -26,9 +26,12 @@
     <%= form.number_field :size %>
   </div>
 
+  <!-- Esto fue hecho por el profesor y chatgpt -->
   <div>
     <%= form.label :category_ids, style: "display: block" %>
-    <%= form.select :category_ids, options_from_collection_for_select(@categories, :id, :name) %> <!--Select configurado-->
+    <%= form.collection_check_boxes :category_ids, @categories, :id, :name do |cb| %>
+      <%= cb.label(class: "checkbox-inline") { cb.check_box + cb.text } %>
+    <% end %>
   </div>
 
   <div>

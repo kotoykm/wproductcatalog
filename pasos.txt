@@ -3,4 +3,6 @@
 
 3. Para crear trablas intermedias se usa la siguiente convención, se usan los nombres en plural porque son muchos
     3.1 rails g migration CreateJoinTableCategoriesProducts category product
-4. 
+4. Seguir los pasos... EXCEPTO CUANDO EL PROFE HAGA ALGO MIRENLO ESTA HACIENDO ALGO
+
+-----COMO AÑADIR CHECKBOXES POR EL PROFESOR Y CHADGPT-----

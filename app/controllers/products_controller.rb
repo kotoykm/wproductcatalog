@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
+    @product =Product.find(params[:id]) #El :id es el /1 que aparece en las rutas, es muy util hehe
   end
 
   # GET /products/new
