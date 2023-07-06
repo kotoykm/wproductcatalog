@@ -27,6 +27,11 @@
   </div>
 
   <div>
+    <%= form.label :category_ids, style: "display: block" %>
+    <%= form.select :category_ids, options_from_collection_for_select(@categories, :id, :name) %> <!--Select configurado-->
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_categories, only: %i[ new edit create update ] #Se pueden personalizar que loco
 
   # GET /products or /products.json
   def index
@@ -21,6 +22,8 @@ class ProductsController < ApplicationController
 
   # POST /products or /products.json
   def create
+    #Se ha modificado para recibir multiples categorias, o no se no me preguntes
+    #NO FUE EDITADO NYA
     @product = Product.new(product_params)
 
     respond_to do |format|
@@ -63,8 +66,12 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
+    def set_categories
+      @categories = Category.all
+    end
+
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :price, :size)
+      params.require(:product).permit(:name, :price, :size, :category_ids => []) #Recibir ademas un array de categorias, para muchas categorias hehe
     end
 end
