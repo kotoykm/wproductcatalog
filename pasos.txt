@@ -1,0 +1,5 @@
+1. rails g scaffold category name
+2. rails g scaffold product name price:integer size:integer
+
+3. Para crear trablas intermedias se usa la siguiente convención, se usan los nombres en plural porque son muchos
+    3.1 rails g migration CreateJoinTableCategoriesProducts category product
