@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
   def create
     #Se ha modificado para recibir multiples categorias, o no se no me preguntes
     #NO FUE EDITADO NYA
-    @product = Product.new(product_params)
+    @product = Product.new(product_params) #Esto se crea como un gran arreglo con todos sus parametros mas el array las categorías, un real curi de curis
 
     respond_to do |format|
       if @product.save

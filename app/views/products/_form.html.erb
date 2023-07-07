@@ -13,25 +13,27 @@
 
   <div class="row">
     <div class="col-4">
-      <div>
-        <%= form.label :name, style: "display: block" %>
-        <%= form.text_field :name %>
+      <div class="mb-3">
+        <%= form.label :name, style: "display: block", class:"form-label" %>
+        <%= form.text_field :name, class:"form-control" %>
       </div>
-      <div>
-        <%= form.label :price, style: "display: block" %>
-        <%= form.number_field :price %>
+      <div class="mb-3">
+        <%= form.label :price, style: "display: block", class:"form-label" %>
+        <%= form.number_field :price, class:"form-control" %>
       </div>
-      <div>
-        <%= form.label :size, style: "display: block" %>
-        <%= form.number_field :size %>
+      <div class="mb-3">
+        <%= form.label :size, style: "display: block", class:"form-label" %>
+        <%= form.number_field :size, class:"form-control" %>
       </div>
     </div>
     <!-- Esto fue hecho por el profesor y chatgpt -->
     <div class="col-4">
-      <div>
+      <div class="mb-3">
         <%= form.label :category_ids, "Categorías", style: "display: block", class: "mb-4" %>
         <%= form.collection_check_boxes :category_ids, @categories, :id, :name do |cb| %>
-          <%= cb.label(class: "mb-1 fst-italic") { cb.check_box(class: "me-2" ) + cb.text } %> <br>
+          <div class="form-check border rounded px-2 py-2 mb-2">
+            <%= cb.label(class: "mb-1 fst-italic") { cb.check_box(class: "me-2" ) + cb.text } %> <br>
+          </div>
         <% end %>
       </div>
 
