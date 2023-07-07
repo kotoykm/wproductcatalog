@@ -6,3 +6,7 @@
 4. Seguir los pasos... EXCEPTO CUANDO EL PROFE HAGA ALGO MIRENLO ESTA HACIENDO ALGO
 
 -----COMO AÑADIR CHECKBOXES POR EL PROFESOR Y CHADGPT-----
+
+MUCHOS COMMITS DESPUES:
+ 
+5. rails g model reaction kind product:references user:references

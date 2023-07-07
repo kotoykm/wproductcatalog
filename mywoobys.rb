@@ -1,0 +1,1 @@
+Reaction.kinds #Hace referencia al metodo creado en el modelo
