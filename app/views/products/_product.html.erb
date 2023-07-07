@@ -6,7 +6,7 @@
 
   <p>
     <strong>Price:</strong>
-    <%= product.price %>
+    <span><%= number_to_currency(product.price, precision: 0) %></span>
   </p>
 
   <p>

@@ -1,26 +1,31 @@
-<p style="color: green"><%= notice %></p>
+<div class="row">
+  <div class="col-4">
+    <p>
+      <strong>Nombre:</strong>
+      <%= @product.name %>
+    </p>
+    
+    <p>
+      <strong>Precio:</strong>
+      <span><%= number_to_currency(@product.price, precision: 0) %></span> <!--https://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html-->
+    </p>
+    
+    <p>
+      <strong>Tamaño:</strong>
+      <%= @product.size %>
+    </p>
+  </div>
+  
+  <div class="col-4">
+    <p>Categorias</p>
+      <ul>
+        <%@product.categories.each do |o|%>
+          <li><%= o.name %></li>
+        <%end%>
+      </ul>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @product.size %>
-</p>
-
-<p>Categorias</p>
-  <ul>
-    <%@product.categories.each do |o|%>
-      <li><%= o.name %></li>
-    <%end%>
-  </ul>
 <div>
   <%= link_to "Edit this product", edit_product_path(@product) %> |
   <%= link_to "Back to products", products_path %>
