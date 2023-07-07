@@ -6,7 +6,9 @@ class ReactionsController < ApplicationController
         @product = Product.find(params[:product_id])
         reaction = Reaction.find_by(user_id: @user.id, product_id: @product.id)
         if reaction
-            return flash.now[:alert] = 'Ya reaccionate no sea bobo'
+            respond_to do |format|
+                format.html { redirect_to product_path(@product), notice: "Ya reaccionate no sea bobo" }
+            end
         else
             @new_reaction = Reaction.new(user_id: @user.id, product_id: @product.id, kind: params[:kind])
             respond_to do |format|
@@ -20,9 +22,9 @@ class ReactionsController < ApplicationController
     end
 
     def product_with_reactions
-        @reactions = current_user.reactions
-        product_ids = @reactions.map(&:product_id)
-        @products = Product.where(id: product_ids)
+    @reactions = current_user.reactions
+    product_ids = @reactions.map(&:product_id)
+    @products = Product.where(id: product_ids)
     end
 end
 
