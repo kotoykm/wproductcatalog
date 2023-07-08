@@ -26,14 +26,6 @@
         <%= form.number_field :size, class:"form-control" %>
       </div>
 
-      <div class="mb-3">
-        <%= form.fields_for :categories do |ff| %> <!--FIELDS FOR ES PARA FORMULARIOS ANIDADOS-->
-        <div class="form-group">
-          <%= ff.label :name, "Nueva categoría (Opcional)" %>
-          <%= ff.text_field :name, class: "form-control" %>
-        </div>
-        <% end %>
-      </div>
     </div>
     <!-- Esto fue hecho por el profesor y chatgpt -->
     <div class="col-4">

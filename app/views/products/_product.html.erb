@@ -14,6 +14,12 @@
     <%= product.size %>
   </p>
 
+  <ul class="list-group">
+    <% product.categories.each do |o| %>
+    <li class="list-group-item"><%=o.name%></li>
+    <%end%>
+  </ul>
+
   <!--Aqui se puede hacer el proceso inverso a lo visto anteriormente en este mismo commit-->
 
 </div>

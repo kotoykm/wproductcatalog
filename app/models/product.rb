@@ -4,6 +4,13 @@ class Product < ApplicationRecord
     has_many :users, through: :reactions #Como base para declarar esto
     # Esto es transitivo
 
+    #Aceptar atributos anidados
+    accepts_nested_attributes_for :categories, reject_if: :no_name_category 
+
+    def no_name_category(attributes)
+        attributes['name'].blank?
+    end
+
     def count_with_kind(arg)
         number = self.reactions.where(kind: arg).count
         return "#{arg} - #{number}"

@@ -17,6 +17,8 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    #PARA ANIDACION
+    @product.categories.build #Que se ejecuten los new y edit del controlador de categorias aqui
   end
 
   # GET /products/1/edit
@@ -75,6 +77,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :price, :size, :category_ids => []) #Recibir ademas un array de categorias, para muchas categorias hehe
+      params.require(:product).permit(:name, :price, :size, :category_ids => [], categories_attributes: [:id, :name]) #Recibir ademas un array de categorias, para muchas categorias hehe
     end
 end
